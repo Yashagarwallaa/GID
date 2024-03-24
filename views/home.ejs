@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD APP</title>
+    <link rel="stylesheet" href="/semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="header item">CRUD</div>
+            <div class="item">
+                <a href="/login">Login</a>
+            </div>
+            <div class="item">
+                <a href='/Signup'>Signup</a>
+            </div>
+            </div>
+            </div>
+             <br> <br> <br>
+        <div class="ui container">
+    <form action="/add" class ='ui form' method="post">
+           <div class="ui two fields">
+        
+            <div class="field">
+                <label for="bookname" class="ui header blue">Enter the book name</label>
+                <input type="text" name = 'bookname'>
+                </div>
+                <div class="field">   
+                <label for="price" class="ui header blue">Enter the book price</label>
+                <input type="text" name = 'price'>
+                </div>
+            </div>
+           <div class="ui fluid field">
+            <input type="submit" value="Submit" class="ui button fluid blue">
+           </div>
+    </form>
+    <br> <br>
+    <table class="ui blue table">
+        <thead>
+            <th>Book Name</th>
+            <th>Book Price</th>
+            <th> <a class="ui blue button"><i class="edit outline form"></i>Edit</a>
+            </th>
+            <th><a class="ui purple button"><i class="minus icon"></i>Delete</th>
+        </thead>
+        <tbody>
+        <% lists.forEach((list)=>{ %>
+            <tr>
+         <td>  <%- list.bookname %></td> 
+          <td>  <%- list.price %> </td>
+        </tr>
+       <%}); %>
+        </tbody>
+    </table>
+</div></div>
+    <script src="/semantic.min.js"></script>
+</body>
+</html>
